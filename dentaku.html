@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href='css/dentaku.css'>
+      <title>電卓</title>
+
+    </head>
+
+    <body>
+      <h3>でんたくver.1</h3>
+      <span id="view"></span>
+
+      <br>
+      <a class="ac" href="#" onclick="reset()">AC</a>
+      <br>
+      <a href="#" onclick="numver(1)">1</a>
+      <a href="#" onclick="numver(2)">2</a>
+      <a href="#" onclick="numver(3)">3</a>
+      <a href="#" onclick="numver(4)">4</a>
+      <a href="#" onclick="numver(5)">5</a>
+      <br>
+      <a href="#" onclick="numver(6)">6</a>
+      <a href="#" onclick="numver(7)">7</a>
+      <a href="#" onclick="numver(8)">8</a>
+      <a href="#" onclick="numver(9)">9</a>
+      <a href="#" onclick="numver(0)">0</a>
+      <br>
+      <a href="#" onclick="kigou('+')">+</a>
+      <a href="#" onclick="kigou('-')">-</a>
+      <a href="#" onclick="kigou('×')">×</a>
+      <a href="#" onclick="kigou('÷')">÷</a>
+      <a href="#" onclick="outcalc()">=</a>
+      <br>
+
+
+      <script type="text/javascript">
+      var edit_area = document.getElementById("view");
+      var num = "";
+      var num2 = "";
+      var state = 0;
+      var calcvar = "";
+      var ans = 0;
+
+      function numver(key) {
+        if(key == 0 && num == ""){
+          edit_area.innerHTML = num;
+        }else
+          {
+          if(state == 0){
+            num += String(key);
+            edit_area.innerHTML = num;
+          }else if(state == 1){
+            num2 += String(key);
+            edit_area.innerHTML = num2;
+          }
+        }
+      }
+
+      function kigou(calc){
+        state = 1;
+        edit_area.innerHTML = calc;
+        if(calc == "+"){
+          calcvar = 1;
+        }else if(calc == "-"){
+          calcvar = 2;
+        }else if(calc == "×"){
+          calcvar = 3;
+        }else if(calc == "÷"){
+          calcvar = 4;
+        }
+      }
+
+      function outcalc(){
+        if(calcvar == 1){
+          ans = Number(num) + Number(num2);
+        }else if(calcvar == 2){
+          ans = Number(num) - Number(num2);
+        }else if(calcvar == 3){
+          ans = Number(num) * Number(num2);
+        }else if(calcvar == 4){
+          ans = Number(num) / Number(num2);
+        }
+        num = ans
+        num2 = "";
+        edit_area.innerHTML = ans;
+      }
+
+      function reset(){
+        num = "";
+        num2 = "";
+        state = 0;
+        calcvar = "";
+        ans = 0;
+        edit_area.innerHTML = num;
+      }
+
+    </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+h3{
+  position:fixed;
+  top: 0px;
+  right: 0px;
+}
+
+span{
+  text-align:  center;
+  position: relative;
+  top: 100px;
+  font-size: 100px;
+  font-family: arial black;
+}
+
+a{
+  font-size: 100px;
+  text-decoration: none;
+  position: relative;
+  top: 150px;
+  left: 300px;
+  font-family:"Impact";
+}
+
+.ac{
+  font-size: 60px;
+  position: relative;
+  left: 500px;
+}
