@@ -1,7 +1,7 @@
 h3{
   position:fixed;
-  top: 0px;
-  right: 0px;
+  top: 20px;
+  right: 50px;
 }
 
 span{
@@ -17,12 +17,12 @@ a{
   text-decoration: none;
   position: relative;
   top: 150px;
-  left: 300px;
+  left: 550px;
   font-family:"Impact";
 }
 
 .ac{
   font-size: 60px;
   position: relative;
-  left: 500px;
+  left: 550px;
 }
